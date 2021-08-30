@@ -16,7 +16,6 @@ class CreateCafesTable extends Migration
         Schema::create('cafes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('prefecture');
             $table->string('address');
             $table->timestamps();
 
