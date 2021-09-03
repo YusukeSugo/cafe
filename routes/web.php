@@ -10,5 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+    
+Route::get('/', 'CafeController@index');
 
-Route::get('/cafes', 'CafeController@index');
+Route::get('/cafes/{cafe}', 'CafeController@detail');
