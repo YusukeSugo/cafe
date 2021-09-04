@@ -11,13 +11,17 @@
     
     <body>
         <h2 class = title><a href="/">Cafe Infomation</a></h2>
-        <h1 class="cafeName">
+        
+        <h3 class="cafeName">
             {{ $cafe->name }}
-        </h1>
-        <p class = "cafeAddress"> {{ $cafe->address }}</p>
+        </h3>
+        <p class = "cafeMap">
+        <a href = "/cafes/ {{ $cafe->id }} /map">{{ $cafe->address }}</a>
+        </p>
+        
         <div class="footer">
             <a href="/">戻る</a>
         </div>
-        
+    
     </body>
 </html>

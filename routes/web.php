@@ -14,3 +14,5 @@
 Route::get('/', 'CafeController@index');
 
 Route::get('/cafes/{cafe}', 'CafeController@detail');
+
+Route::get('/cafes/{cafe}/map', 'CafeController@map');
