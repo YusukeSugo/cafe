@@ -26,4 +26,8 @@ class CafeController extends Controller
     public function detail(Cafe $cafe){
         return view('detail')->with(['cafe' => $cafe]);
     }
+    
+    public function map(Cafe $cafe){
+        return view('map')->with(['cafe' => $cafe]);
+    }
 }
