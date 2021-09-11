@@ -18,6 +18,8 @@
         <p class = "cafeMap">
         <a href = "/cafes/ {{ $cafe->id }} /map">{{ $cafe->address }}</a>
         </p>
+       
+        <img src="{{ $cafe->image_path }}">
         
         <div class="footer">
             <a href="/">戻る</a>

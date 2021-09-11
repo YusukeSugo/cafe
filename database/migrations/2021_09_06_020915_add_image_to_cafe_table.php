@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddHomepageToCafesTable extends Migration
+class AddImageToCafeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class AddHomepageToCafesTable extends Migration
     {
         Schema::table('cafes', function (Blueprint $table) {
             //
-            $table -> string('homepage')->nullable();
+            $table->string('image_path')->nullable();
         });
     }
 
