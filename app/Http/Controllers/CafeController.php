@@ -8,15 +8,25 @@ use Storage;
 
 class CafeController extends Controller
 {
-    /**
-     * Cafe一覧を表示する
-     * 
-     * @param Cafe Cafeモデル
-     * @return array  Cafeモデルリスト
-     */
-     public function index(Cafe $cafe){
-         return view('index')->with(['cafes' => $cafe->get()]); 
-     }
+     
+     
+    public function index(Cafe $cafe, Request $request){
+        #キーワード受け取り
+        $keyword = $request->input('keyword');
+ 
+        #クエリ生成
+        $query = Cafe::query();
+        
+ 
+        if(!empty($keyword))
+        {
+            $query->where('prefecture','like','%'.$keyword.'%');
+        }
+ 
+        $cafe = $query;
+        return view('index')->with(['cafes' => $cafe->get()])
+        ->with('keyword',$keyword);
+        }
      
      /**
     * 特定IDのpostを表示する
@@ -26,6 +36,7 @@ class CafeController extends Controller
     */
     public function detail(Cafe $cafe){
         return view('detail')->with(['cafe' => $cafe]);
+          
     }
     
     public function map(Cafe $cafe){
