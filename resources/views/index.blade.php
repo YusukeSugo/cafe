@@ -5,14 +5,21 @@
         <title>CafeTop</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        
     </head>
     <body>
-        <h1>Cafe Infomation</h1>
-        <input type = "button" onclick="location.href='login.blade.php'" value = "ログイン">
-        <form action =  "サイトURL" method = "get">
-            <input type = "search" name = "search" placeholder = "検索したい都道府県">
-            <input type = "submit" name = "submit" value = "検索">
-        </form>
+        <h1><a href="/">Cafe Infomation</a></h1>
+        
+        <div class="col-sm-4" style="padding:20px 0; padding-left:0px;">
+            <form class="form-inline" method="GET" action="/">
+                <div class="form-group">
+                    <input type="text" name="keyword" value="{{ $keyword }}" class="form-control" placeholder="都道府県を入力してください">
+                </div>
+                <input type="submit" value="検索" class="btn btn-info">
+            </form>
+        </div>
+        
+        
         <div class = 'cafes'>
             @foreach ($cafes as $cafe)
             <div class = 'cafe'>
@@ -21,6 +28,7 @@
             </div>
             @endforeach
         </div>
+       
         <div class = 'entry'>[<a href='/cafes/entry'>カフェ登録</a>]</div>
     </body>
 </html>
