@@ -12,6 +12,11 @@
     <body>
         <h2 class = title><a href="/">Cafe Infomation</a></h2>
         
+        <div class = "login">
+            <div class="loginInfo"><p>ログインをすると投稿にコメントできます</p></div>
+            <input type = "button" onclick="location.href='{{ route('login') }}'" value = "ログイン">
+        </div>
+        
         <h3 class="cafeName">
             {{ $cafe->name }}
         </h3>

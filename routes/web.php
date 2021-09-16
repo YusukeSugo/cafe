@@ -19,7 +19,29 @@ Route::post('/cafes', 'CafeController@store');
 
 Route::get('/cafes/{cafe}', 'CafeController@detail');
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/cafes/{cafe}/map', 'CafeController@map');
 
 
 
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
