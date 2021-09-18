@@ -30,5 +30,6 @@
         </div>
        
         <div class = 'entry'>[<a href='/cafes/entry'>カフェ登録</a>]</div>
+        <p>ログインを行うと投稿できます</p>
     </body>
 </html>

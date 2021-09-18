@@ -17,4 +17,8 @@ class Cafe extends Model
         'image_path',
         'prefecture'
         ];
+        
+        public function comments() {
+            return $this->hasMany('App\Comment');
+         }
 }

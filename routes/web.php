@@ -13,9 +13,10 @@
     
 Route::get('/', 'CafeController@index');
 
-Route::get('/cafes/entry', 'CafeController@entry');
-
-Route::post('/cafes', 'CafeController@store');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/cafes/entry', 'CafeController@entry')->name("cafe.entry");
+    Route::post('/cafes', 'CafeController@store');
+});
 
 Route::get('/cafes/{cafe}', 'CafeController@detail');
 
@@ -29,19 +30,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/cafes/{cafe}/map', 'CafeController@map');
 
-
-
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/cafes/{cafe}/comments', 'CommentController@store');
