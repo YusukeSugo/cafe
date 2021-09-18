@@ -17,16 +17,16 @@ class CafeController extends Controller
         #クエリ生成
         $query = Cafe::query();
         
- 
+        
         if(!empty($keyword))
         {
-            $query->where('prefecture','like','%'.$keyword.'%');
+            $query->where('prefecture','like','%'.$keyword.'%')->get();
         }
  
         $cafe = $query;
         return view('index')->with(['cafes' => $cafe->get()])
         ->with('keyword',$keyword);
-        }
+    }
      
      /**
     * 特定IDのpostを表示する
