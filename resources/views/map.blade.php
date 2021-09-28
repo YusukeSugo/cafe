@@ -10,12 +10,12 @@
     </head>
     
     <body>
-    <p id="cafe"> {{  $cafe->name  }}</p>
-    <p id="address"> {{ $cafe->address }}</p>
-    <div id="gmap" style="height:400px;width:600px"></div>
-    <div class="footer">
-         <a href="/cafes/{{ $cafe->id }}">戻る</a>
-    </div>
+        <p id="cafe"> {{  $cafe->name  }}</p>
+        <p id="address"> {{ $cafe->address }}</p>
+        <div id="gmap" style="height:400px;width:600px"></div>
+            <div class="footer">
+                <a href="/cafes/{{ $cafe->id }}">戻る</a>
+            </div>
         
     <script>
     function initMap() {
@@ -53,7 +53,7 @@
       });
     }
     </script> 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsHFfTvbo34J1g8peO6SbMhiEMxIO-Zlw&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.gmap.key') }}&callback=initMap" async defer></script>
     
     </body>
 </html>

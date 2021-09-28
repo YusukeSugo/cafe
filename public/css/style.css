@@ -1,0 +1,64 @@
+
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+
+
+.detail{
+    background-image:url(../images/whitewood.jpeg);
+    background-repeat: repeat;
+}
+
+body{
+    background-image: url(../images/backcafe.jpeg), url(../images/whitewood.jpeg);
+    background-repeat: no-repeat, repeat;
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+.titlename{
+    color: #fff;
+}
+#title{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.form-control{
+    width:300px;
+}
+
+.form-inline{
+    justify-content: flex-end;
+}
+
+.cafes{
+    display: flex;
+    flex-wrap:wrap;
+}
+.cafe{
+    position: relative;
+    width:30%;
+    padding-top:30%;
+    margin:1% 10%;
+    text-align: center;
+    border-radius: 50%;
+    background-color: skyblue;
+}
+
+.cafe_description{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.detailInfo{
+    display: flex;
+    justify-content: space-around;
+}
+
+.detailImage{
+    text-align: center;
+    border:red 1px;
+}
