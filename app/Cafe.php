@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cafe extends Model
 {
     
-    public function getPaginateByLimit(int $limit_count = 10){
+    public function getPaginateByLimit(int $limit_count = 2){
         return $this->orderBy('created_at', 'DESC')->paginate($limit_count);
     }
     //
@@ -16,9 +16,9 @@ class Cafe extends Model
         'address',
         'image_path',
         'prefecture'
-        ];
+    ];
         
-        public function comments() {
-            return $this->hasMany('App\Comment');
-         }
+    public function comments() {
+        return $this->hasMany('App\Comment');
+    }
 }

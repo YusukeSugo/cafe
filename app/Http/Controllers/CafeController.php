@@ -20,7 +20,7 @@ class CafeController extends Controller
         
         if(!empty($keyword))
         {
-            $query->where('prefecture','like','%'.$keyword.'%')->get();
+            $query->where('prefecture','like','%'.$keyword.'%');
         }
  
         $cafe = $query;
