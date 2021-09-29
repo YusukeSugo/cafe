@@ -16,10 +16,10 @@ class CommentController extends Controller
       ]);
 
       $comment = new Comment(['body' => $request->body]);
-      $cafe = Post::findOrFail($cafeId);
+      $cafe = Cafe::findOrFail($cafeId);
       $cafe->comments()->save($comment);
 
       return redirect()
-             ->action('PostsController@show', $cafe->id);
+             ->action('CafeController@detail', $cafe->id);
     }
 }

@@ -60,5 +60,104 @@ body{
 
 .detailImage{
     text-align: center;
-    border:red 1px;
+}
+
+.mapText{
+    display: flex;
+    justify-content: space-around;
+}
+
+#gmap{
+    width: 50%;
+    height: 0;
+    padding-top: 40%;
+    margin: 0 auto
+}
+
+.footer {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+.footer:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+#entryTitle{
+    color:#fff;
+}
+
+.entryInfo{
+    color:#fff;
+    text-align:center;
+}
+
+.cafeEntry {
+	position: relative;
+	width: 50%;
+	margin: 80px auto;
+	color:white;
+}
+.cafeEntry input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 4em;
+}
+.cafeEntry input[type='text']:focus {
+	outline: none;
+}
+.ef {
+	position: relative;
+	padding: 7px 15px;
+	border: 0;
+	border: 2px solid white;
+	background: transparent;
+}
+.ef ~ .focus_bg {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	transition: 0.4s;
+	background-color: transparent;
+}
+.ef:focus {
+	border: 1px solid #da3c41;
+}
+.ef:focus ~ .focus_bg, .cp_iptxt.ef ~ .focus_bg {
+	width: 100%;
+	transition: 0.4s;
+	background-color: rgba(218,60,65,.3);
+}
+.ef ~ label {
+	position: absolute;
+	z-index: -1;
+	top: 10px;
+	left: 14px;
+	width: 100%;
+	transition: 0.3s;
+	letter-spacing: 0.5px;
+	color: white;
+}
+.ef:focus ~ label, .cp_iptxt.ef ~ label {
+	font-size: 12px;
+	top: -18px;
+	left: 0;
+	transition: 0.3s;
+	color: #da3c41;
+}
+
+.submitBt{
+    text-align:center;
 }

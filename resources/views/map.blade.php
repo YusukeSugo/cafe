@@ -7,16 +7,19 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     </head>
     
-    <body>
-        <p id="cafe"> {{  $cafe->name  }}</p>
-        <p id="address"> {{ $cafe->address }}</p>
-        <div id="gmap" style="height:400px;width:600px"></div>
-            <div class="footer">
-                <a href="/cafes/{{ $cafe->id }}">戻る</a>
-            </div>
-        
+    <body class="detail">
+        <div class="mapText">
+            <h3 id="cafe"> {{  $cafe->name  }}</h3>
+            <p id="address"> {{ $cafe->address }}</p>
+        </div>
+        <div id="gmap"></div>
+
+        <a href="/cafes/{{ $cafe->id }}" class="footer">戻る</a>
+    </body>
+    
     <script>
     function initMap() {
       var target = document.getElementById('gmap');  
@@ -55,5 +58,4 @@
     </script> 
     <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.gmap.key') }}&callback=initMap" async defer></script>
     
-    </body>
 </html>

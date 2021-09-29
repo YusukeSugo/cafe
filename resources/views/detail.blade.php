@@ -19,8 +19,9 @@
             <h3 class="cafeName">
                 {{ $cafe->name }}
             </h3>
+            
             <p class = "cafeMap">
-                <a href = "/cafes/ {{ $cafe->id }} /map">{{ $cafe->address }}</a>
+                GoogleMap:<a href = "/cafes/ {{ $cafe->id }} /map">{{ $cafe->address }}</a>
             </p>
         </div>
         <div class="detailImage" >
@@ -58,9 +59,7 @@
         
         @endif
         
-        <div class="footer">
-            <a href="/">戻る</a>
-        </div>
+        <a href="/" class="footer">戻る</a>
     @endsection
     </body>
 </html>
