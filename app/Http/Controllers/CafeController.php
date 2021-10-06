@@ -23,8 +23,8 @@ class CafeController extends Controller
             $query->where('prefecture','like','%'.$keyword.'%');
         }
  
-        $cafe = $query;
-        return view('index')->with(['cafes' => $cafe->get()])
+        $cafe = $query->paginate(6);
+        return view('index')->with(['cafes' => $cafe])
         ->with('keyword',$keyword);
     }
      

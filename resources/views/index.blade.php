@@ -33,6 +33,8 @@
                 </div>
             </div>
             @endforeach
+            
+            {{ $cafes->links() }}
         </div>
        
         <div class = 'entry'>[<a href='/cafes/entry'>カフェ登録</a>]</div>
