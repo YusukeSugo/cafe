@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        @extends('layouts.app')
+         @extends('layouts.app')
         <meta charset="utf-8">
         <title>CafeTop</title>
         <!-- Fonts -->
@@ -27,19 +27,24 @@
         <div class = 'cafes'>
             @foreach ($cafes as $cafe)
             <div class = 'cafe'>
-                <div class="cafe_description">
-                    <h3><a class="cafename" href="/cafes/{{ $cafe -> id }}">{{ $cafe -> name }}</a></h3>
-                    <p class = "address"> {{ $cafe -> address }}</p>
+                <div class="cafe_foop">
+                    <div class="cafe_description">
+                        <h3><a class="cafename" href="/cafes/{{ $cafe -> id }}">{{ $cafe -> name }}</a></h3>
+                        <p class = "address"> {{ $cafe -> address }}</p>
+                    </div>
                 </div>
             </div>
             @endforeach
-            
-            {{ $cafes->links() }}
-        </div>
-       
-        <div class = 'entry'>[<a href='/cafes/entry'>カフェ登録</a>]</div>
-        <p>ログインを行うと投稿できます</p>
+         </div>  
         
+        <div class = 'end'>
+            {{ $cafes->links() }}
+            
+            <div>
+                <div class = 'entry'>[<a href='/cafes/entry'>カフェ登録</a>]</div>
+                <p>ログインを行うと投稿できます</p>
+            </div>
+        </div>
         @endsection
     </body>
 </html>
