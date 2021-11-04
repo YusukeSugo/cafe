@@ -16,8 +16,10 @@
             <p id="address"> {{ $cafe->address }}</p>
         </div>
         <div id="gmap"></div>
-
-        <a href="/cafes/{{ $cafe->id }}" class="footer">戻る</a>
+    
+        <div class = 'back'>
+            <a href="/cafes/{{ $cafe->id }}" class="footer">戻る</a>
+        </div>
     </body>
     
     <script>

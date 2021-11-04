@@ -10,40 +10,43 @@
     <body class = "detail">
         
         <h1 class = "eeTitle">CafeInfomation</h1>
-        <form action="/cafes" method="POST" enctype="multipart/form-data">
+        <h2>編集ページ</h2>
+        <p>全ての項目を編集する必要があります</p>
+        <form action="{{ route('cafe.update', $cafe) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="entryInfo">
             
-                <div class="cafeEntry">
-                    <input class="ef" type="text" name="cafe[name]" placeholder="">
-                    <label>カフェ名</label>
+                <div class="cafeEdit">
+                    <input class="ef" type="text" name="cafe[name]" placeholder="{{ $cafe->name}}">
                     <span class="focus_bg"></span>
                 </div>
         
                 <div class="cafeEntry">
-                    <input class="ef" type="text" name="cafe[prefecture]" placeholder="">
-                    <label>都道府県</label>
+                    <input class="ef" type="text" name="cafe[prefecture]" placeholder="{{ $cafe->prefecture }}">
                     <span class="focus_bg"></span>
                 </div>
         
         
                 <div class="cafeEntry">
-                    <input class="ef" type="text" name="cafe[address]" placeholder="">
-                    <label>住所</label>
+                    <input class="ef" type="text" name="cafe[address]" placeholder="{{ $cafe->address}}">
                     <span class="focus_bg"></span>
                 </div>
         
+                <div class="editImage" >
+                    <img src="{{ $cafe->image_path }}">
+                </div>
+                
                 <div class = "cafe_image">
                     <h2>カフェの写真</h2>
                     <input type="file" name="image">
                 </div>
             </div>
         <div class ="submitBt">       
-            <input type="submit" value="登録"/>
+            <input type="submit" value="編集完了"/>
         </div>
     </form>
         <div class = "back">
             <a href="/" class="footer">戻る</a>
-        </div> 
+        </div>    
     </body>
 </html>

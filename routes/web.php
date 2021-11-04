@@ -14,9 +14,13 @@
 Route::get('/', 'CafeController@index');
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/cafes/entry', 'CafeController@entry')->name("cafe.entry");
+    Route::get('/cafes/entry', 'CafeController@entry')->name('cafe.entry');
     Route::post('/cafes', 'CafeController@store');
 });
+
+Route::get('/cafes/{cafe}/edit', 'CafeController@edit')->name('cafe.edit');
+
+Route::post('/cafes/{cafe}', 'CafeController@update')->name('cafe.update');
 
 Route::get('/cafes/{cafe}', 'CafeController@detail');
 

@@ -21,4 +21,8 @@ class Cafe extends Model
     public function comments() {
         return $this->hasMany('App\Comment');
     }
+    
+    public function cafes(){
+        return $this->hasMany('App\Cafe');
+    }
 }
