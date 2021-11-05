@@ -38,6 +38,7 @@
                 
                 <div class = "cafe_image">
                     <h2>カフェの写真</h2>
+                    <p>画像拡張子をjpegかpngに変更する必要があります</p>
                     <input type="file" name="image">
                 </div>
             </div>
